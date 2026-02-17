@@ -1,0 +1,98 @@
+/* ========================================
+   FILTER BUTTONS STYLES
+   ======================================== */
+
+.filter-buttons-container {
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+  animation: fadeIn 0.8s ease-out 0.3s both;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--card-bg);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-red);
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.filter-btn:hover {
+  border-color: var(--netflix-red);
+  color: var(--text-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(191, 11, 26, 0.3);
+}
+
+.filter-btn.active {
+  background: var(--gradient-red);
+  border-color: transparent;
+  color: var(--text-primary);
+  box-shadow: 0 6px 25px rgba(191, 11, 26, 0.5);
+}
+
+.filter-btn.active::before {
+  left: 0;
+}
+
+.filter-icon,
+.filter-label {
+  position: relative;
+  z-index: 1;
+}
+
+.filter-icon {
+  font-size: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-buttons-container {
+    padding: 0 1rem;
+  }
+
+  .filter-buttons {
+    gap: 0.75rem;
+  }
+
+  .filter-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .filter-label {
+    display: none;
+  }
+
+  .filter-icon {
+    font-size: 1.5rem;
+  }
+}

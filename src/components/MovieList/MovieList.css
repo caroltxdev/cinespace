@@ -1,0 +1,71 @@
+/* ========================================
+   MOVIE LIST STYLES
+   ======================================== */
+
+.movie-list-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.empty-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.empty-title {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.empty-text {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .movie-list-container {
+    padding: 0 1rem 3rem;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .empty-state {
+    padding: 3rem 1rem;
+  }
+
+  .empty-icon {
+    font-size: 4rem;
+  }
+
+  .empty-title {
+    font-size: 1.5rem;
+  }
+
+  .empty-text {
+    font-size: 1rem;
+  }
+}

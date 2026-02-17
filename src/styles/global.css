@@ -1,0 +1,211 @@
+/* ========================================
+   WATCHBLOOM - NETFLIX INSPIRED THEME
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Paleta Netflix Cinematográfica */
+  --netflix-red: #BF0B1A;
+  --wine-red: #730A26;
+  --navy-blue: #1D2659;
+  --ocean-blue: #20448C;
+  --sky-blue: #7193D9;
+  --dark-bg: #0A0A0A;
+  --card-bg: #181818;
+  --card-hover: #2A2A2A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B3B3B3;
+  --text-muted: #808080;
+  
+  /* Gradientes */
+  --gradient-red: linear-gradient(135deg, #BF0B1A 0%, #730A26 100%);
+  --gradient-blue: linear-gradient(135deg, #20448C 0%, #1D2659 100%);
+  --gradient-dark: linear-gradient(180deg, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 1) 100%);
+}
+/* Tema ESCURO (padrão) */
+body[data-theme='dark'] {
+  --dark-bg: #0A0A0A;
+  --card-bg: #181818;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B3B3B3;
+}
+
+/* Tema CLARO */
+body[data-theme='light'] {
+  --dark-bg: #F5F5F5;
+  --card-bg: #FFFFFF;
+  --card-hover: #F0F0F0;
+  --text-primary: #1A1A1A;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   BACKGROUND EFFECT - Cinema Atmosphere
+   ======================================== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(191, 11, 26, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(32, 68, 140, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ========================================
+   SCROLLBAR CUSTOMIZATION
+   ======================================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--netflix-red);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wine-red);
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+button {
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ========================================
+   INPUT STYLES
+   ======================================== */
+input, select, textarea {
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  box-shadow: 0 0 0 2px var(--netflix-red);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}

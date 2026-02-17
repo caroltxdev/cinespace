@@ -1,0 +1,151 @@
+/* ========================================
+   HEADER STYLES
+   ======================================== */
+
+.header {
+  padding: 2rem 0 1rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Brand Section */
+.header-brand {
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.logo-icon {
+  font-size: 3rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.logo-text {
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  background: var(--gradient-red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+}
+
+/* Stats Pills */
+.header-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat-pill {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.stat-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  border-color: var(--netflix-red);
+}
+
+.stat-pill-watched {
+  background: linear-gradient(135deg, rgba(115, 10, 38, 0.3) 0%, rgba(191, 11, 26, 0.2) 100%);
+}
+
+.stat-pill-want {
+  background: linear-gradient(135deg, rgba(32, 68, 140, 0.3) 0%, rgba(29, 38, 89, 0.2) 100%);
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Decorative Line */
+.header-line {
+  height: 2px;
+  background: var(--gradient-red);
+  margin-top: 2rem;
+  opacity: 0.3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .logo-text {
+    font-size: 3rem;
+  }
+
+  .logo-icon {
+    font-size: 2.5rem;
+  }
+
+  .header-stats {
+    width: 100%;
+  }
+
+  .stat-pill {
+    flex: 1;
+    min-width: 100px;
+    justify-content: center;
+  }
+}

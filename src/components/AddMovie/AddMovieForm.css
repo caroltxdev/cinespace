@@ -1,0 +1,201 @@
+/* ========================================
+   ADD MOVIE FORM STYLES
+   ======================================== */
+
+.add-movie-form-container {
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* Botão de Expandir */
+.add-button-expand {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: var(--gradient-red);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 6px 25px rgba(191, 11, 26, 0.4);
+  transition: all 0.3s ease;
+}
+
+.add-button-expand:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(191, 11, 26, 0.6);
+}
+
+.add-icon {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+/* Formulário Expandido */
+.add-movie-form {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.4s ease-out;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-header h2 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  letter-spacing: 2px;
+}
+
+.close-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  transform: rotate(90deg);
+}
+
+/* Grid do Formulário */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgb(104, 101, 101);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--netflix-red);
+}
+
+.form-group textarea {
+  resize: vertical;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Botões de Ação */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.btn-cancel,
+.btn-submit {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-cancel {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.btn-submit {
+  background: var(--gradient-red);
+  color: var(--text-primary);
+  border: none;
+  box-shadow: 0 4px 15px rgba(191, 11, 26, 0.3);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(191, 11, 26, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .add-movie-form-container {
+    padding: 0 1rem;
+  }
+
+  .add-movie-form {
+    padding: 1.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-submit {
+    width: 100%;
+  }
+}
